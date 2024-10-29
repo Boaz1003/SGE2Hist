@@ -1,7 +1,6 @@
 # SGE2Hist
 This repository contains the code implementation for the paper titled "SGE2Hist: Generating Histology Images from Spatially Resolved Single-cell Gene Expression via Cross-modal Generative Network"
-SGE2Hist is a model designed to generate histological images based on single-cell gene expression data. The model leverages variational autoencoder techniques for low-dimensional representation of cell states and employs a novel latent space decoupling approach to improve clustering accuracy and capture microenvironment details.
-
+SGE2Hist is a model designed to generate histological images based on single-cell gene expression data. 
 
 ## Requirements
 
