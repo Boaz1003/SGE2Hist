@@ -10,13 +10,13 @@ SGE2Hist is a model designed to generate histological images based on single-cel
 - NumPy 2.0.2+
 
 
-Install the required libraries:
-```bash
-pip install -r requirements.txt
-
-
 ## Dataset
 
 The dataset used in this project is the 10X GENOMICS Visium HD Spatial Gene Expression Library. you can get from “https://www.10xgenomics.com/datasets/visium-hd-cytassist-gene-expression-mouse-brain-fresh-frozen” and “https://www.10xgenomics.com/datasets/visium-hd-cytassist-gene-expression-libraries-of-mouse-embryo”.
 
 And the paired spatial resolution single-cell RNA sequencing and H&E images we processed can be got from "https://pan.baidu.com/s/1gZsRJmA4ChITDF-1_bAAFQ?pwd=1oob" for Mouse Brain and "https://pan.baidu.com/s/13ippRbnTgow9eVtZcTwZNg?pwd=r233" for Mouse Embyro.
+
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
