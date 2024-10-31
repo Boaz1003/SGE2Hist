@@ -70,11 +70,11 @@ To demonstrate the effectiveness of the two generation methods, we provide a com
 
 1. **Conditioned on RNA-seq**: The images generated using RNA-seq data highlight the intricate details and cellular distributions informed by gene expression profiles.
 
-    ![RNA-seq Generated Images](path_to_rna_seq_images)
+    ![RNA-seq Generated Images](./figures/RNA.png)
 
 2. **Conditioned on Cell Type**: The images generated based on specified cell types showcase how different cellular environments influence the resulting histological structures.
 
-    ![Cell Type Generated Images](path_to_cell_type_images)
+    ![Cell Type Generated Images](./figures/Cell Type.png)
 
 Please replace `path_to_rna_seq_images` and `path_to_cell_type_images` with the actual paths to the generated images. This section aims to provide visual evidence of the model's capabilities and the quality of the generated outputs.
 
