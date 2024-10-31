@@ -178,3 +178,56 @@ class SGE2Hist(nn.Module):
         LossFucntion = nn.MSELoss()
         L_rec = LossFucntion(genes_rec, genes)
 
+
+    def GenerationfromType(self, size, genes, type, n_sample):
+        type = torch.tensor(type, device=self.device)
+        types = type.repeat(n_sample)
+        z_mu, z_logvar = self.vae.encoder(genes)
+        z_dim = self.latent_dim
+        z1_mu, z2_mu = torch.split(z_mu, [self.Cluster_dim, z_dim - self.Cluster_dim], dim=1)
+        z1_logvar, z2_logvar = torch.split(z_logvar, [self.Cluster_dim, z_dim - self.Cluster_dim], dim=1)
+        z1 = self.sample_batch_from_clusters(types, self.mu, self.logvar).to(self.device)
+        z2 = reparameterize(z2_mu, z2_logvar)
+        z2 = z2.repeat(n_sample, 1)
+        print(z1.shape, z2.shape)
+        z_i = torch.cat((z1, z2), dim=1)
+        x_i = torch.randn(n_sample, *size).to(self.device)
+        for i in range(self.n_T, 0, -1):
+            print(f'sampling timestep {i}', end='\r')
+            t_is = torch.tensor([i / self.n_T]).to(self.device)
+            # t_is = t_is.repeat(n_sample, 1, 1, 1)
+            # double batch
+
+            z = torch.randn(n_sample, *size).to(self.device) if i > 1 else 0
+
+            # split predictions and compute weighting
+            eps = self.nn_model(x_i, z_i, t_is)
+
+            x_i = (
+                    self.oneover_sqrta[i] * (x_i - eps * self.mab_over_sqrtmab[i])
+                    + self.sqrt_beta_t[i] * z
+            )
+        return x_i
+
+
+    def GenerationfromGenes(self, genes, size, n_sample):
+        x_i = torch.randn(n_sample, *size).to(self.device)
+        z_mu, z_logvar = self.vae.encoder(genes)
+        z_i = reparameterize(z_mu, z_logvar)
+        for i in range(self.n_T, 0, -1):
+            print(f'sampling timestep {i}', end='\r')
+            t_is = torch.tensor([i / self.n_T]).to(self.device)
+            # t_is = t_is.repeat(n_sample, 1, 1, 1)
+            # double batch
+
+            z = torch.randn(n_sample, *size).to(self.device) if i > 1 else 0
+
+            # split predictions and compute weighting
+            eps = self.nn_model(x_i, z_i, t_is)
+
+            x_i = (
+                    self.oneover_sqrta[i] * (x_i - eps * self.mab_over_sqrtmab[i])
+                    + self.sqrt_beta_t[i] * z
+            )
+        x_decoder = self.vae.decoder(z_i)
+        return x_i, x_decoder
