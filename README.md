@@ -23,6 +23,7 @@ And the paired spatial resolution single-cell RNA sequencing and H&E images we p
 
 To use the SGE2Hist model, follow these steps:
 
+
 1. **Pre-train the VAE**: First, you need to pre-train the VAE architecture to determine the initial Gaussian mixture distribution for clustering cell types. Use the following command:
 
     ```bash
@@ -45,7 +46,7 @@ To use the SGE2Hist model, follow these steps:
     model.train(dataset)
     ```
 
-
+**Pre-trained Model Weights**：You can download the pre-trained model weights from: 
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
