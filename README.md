@@ -29,7 +29,7 @@ To use the SGE2Hist model, follow these steps:
     ```bash
     python pretrain.py 
     ```
-2. **Load the Pre-trained VAE**: After pre-training, load the pre-trained VAE model for further training:"https://pan.baidu.com/s/1YxcC95lApwpzi27LoUBldw?pwd=wodz"
+2. **Load the Pre-trained VAE**: After pre-training, load the pre-trained VAE model for further training
 
     ```python
     from SGE2Hist import SGE2Hist
@@ -46,7 +46,7 @@ To use the SGE2Hist model, follow these steps:
     model.train(dataset)
     ```
 
-**Pre-trained Model Weights**：You can download the pre-trained model weights from: 
+**Pre-trained Model Weights**：You can download the pre-trained model weights from:"https://pan.baidu.com/s/1YxcC95lApwpzi27LoUBldw?pwd=wodz"
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
