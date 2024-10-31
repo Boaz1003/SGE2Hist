@@ -17,6 +17,35 @@ And the paired spatial resolution single-cell RNA sequencing and H&E images we p
 "https://pan.baidu.com/s/13ippRbnTgow9eVtZcTwZNg?pwd=r233" for Mouse Embyro.
 
 
+## Usage
+
+
+
+To use the SGE2Hist model, follow these steps:
+
+1. **Pre-train the VAE**: First, you need to pre-train the VAE architecture to determine the initial Gaussian mixture distribution for clustering cell types. Use the following command:
+
+    ```bash
+    python pretrain.py 
+    ```
+2. **Load the Pre-trained VAE**: After pre-training, load the pre-trained VAE model for further training:
+
+    ```python
+    from SGE2Hist import SGE2Hist
+    from Dataset import DataSet
+
+    # Initialize the SGE2Hist model with the pre-trained VAE
+    model = SGE2Hist()
+    model.load_state_dict(torch.load('Pretrained weight/pre_embyro.pt'))
+
+    # Load the dataset
+    dataset = DataSet(datadir='', transform=transform)
+
+    # Train the complete model
+    model.train(dataset)
+    ```
+
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
