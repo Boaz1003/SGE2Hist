@@ -47,6 +47,38 @@ To use the SGE2Hist model, follow these steps:
     ```
 
 **Pre-trained Model Weights**：You can download the pre-trained model weights from:"https://pan.baidu.com/s/1YxcC95lApwpzi27LoUBldw?pwd=wodz"
+
+## Generating Histological Images
+
+The SGE2Hist model offers two methods for generating histological images:
+
+1. **Conditioned on RNA-seq**: This method generates images based on the single-cell RNA sequencing data. To use this method, run the following script:
+
+    ```bash
+    python GenerationfromGenes.py 
+    ```
+
+2. **Conditioned on Cell Type**: This method generates images based on specified cell types. To use this method, run the following script:
+
+    ```bash
+    python GenerationfromTypes.py 
+    ```
+
+## Results Showcase
+
+To demonstrate the effectiveness of the two generation methods, we provide a comparison of the generated histological images. 
+
+1. **Conditioned on RNA-seq**: The images generated using RNA-seq data highlight the intricate details and cellular distributions informed by gene expression profiles.
+
+    ![RNA-seq Generated Images](path_to_rna_seq_images)
+
+2. **Conditioned on Cell Type**: The images generated based on specified cell types showcase how different cellular environments influence the resulting histological structures.
+
+    ![Cell Type Generated Images](path_to_cell_type_images)
+
+Please replace `path_to_rna_seq_images` and `path_to_cell_type_images` with the actual paths to the generated images. This section aims to provide visual evidence of the model's capabilities and the quality of the generated outputs.
+
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
