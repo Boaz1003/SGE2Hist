@@ -74,7 +74,7 @@ To demonstrate the effectiveness of the two generation methods, we provide a com
 
 2. **Conditioned on Cell Type**: The images generated based on specified cell types showcase how different cellular environments influence the resulting histological structures.
 
-    ![Cell Type Generated Images](./figures/CellType.png)
+    ![Cell Type Generated Images](./figures/Type.png)
 
 Please replace `path_to_rna_seq_images` and `path_to_cell_type_images` with the actual paths to the generated images. This section aims to provide visual evidence of the model's capabilities and the quality of the generated outputs.
 
