@@ -70,11 +70,11 @@ To demonstrate the effectiveness of the two generation methods, we provide a com
 
 1. **Conditioned on RNA-seq**: The images generated using RNA-seq data highlight the cellular morphology and the surrounding environment informed by gene expression profiles.
 
-    ![RNA-seq Generated Images](./figures/1.png)
+    ![RNA-seq Generated Images](./figures/RNA.png)
 
 2. **Conditioned on Cell Type**: The images generated based on specified cell types showcase how different cellular environments influence the resulting histological structures.
 
-    ![Cell Type Generated Images](./figures/2.png)
+    ![Cell Type Generated Images](./figures/Type.png)
 
 
 ## License
